@@ -8,7 +8,7 @@ class App {
     console.error(error);
   }
   handleGetGradesSuccess(grades){
-    console.log(grades);
+    this.gradeTable.updateGrades(grades);
   }
   getGrades(){
     $.ajax({
@@ -16,9 +16,9 @@ class App {
       url: "https://sgt.lfzprototypes.com/api/grades",
       success: this.handleGetGradesSuccess,
       error: this.handleGetGradesError
-    })
+    });
   }
   start(){
-    this.getGrades()
+    this.getGrades();
   }
 }
