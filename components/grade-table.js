@@ -13,10 +13,11 @@ class GradeTable {
       stuName.textContent = grades[i].name;
       stuCourse.textContent = grades[i].course;
       stuGrade.textContent = grades[i].grade;
+      stuName.classList = 'border-right-black';
+      stuCourse.classList = 'border-right-black';
 
       row.append(stuName, stuCourse, stuGrade);
       tbody.appendChild(row);
     }
-    console.log(grades);
   }
 }
