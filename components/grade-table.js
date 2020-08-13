@@ -6,24 +6,14 @@ class GradeTable {
     var tbody = this.tableElement.querySelector('TBODY');
     tbody.innerHTML = '';
     for (var i = 0; i < grades.length; i++) {
-      var row = document.createElement('TR');
-      var stuName = document.createElement('TD');
-      var stuCourse = document.createElement('TD');
-      var stuGrade = document.createElement('TD');
-      stuName.textContent = grades[i].name;
-      stuCourse.textContent = grades[i].course;
-      stuGrade.textContent = grades[i].grade;
-      stuName.classList = 'border-right-black';
-      stuCourse.classList = 'border-right-black';
-
-      row.append(stuName, stuCourse, stuGrade);
-      tbody.appendChild(row);
+      this.renderGradeRow(grades[i], this.deleteGrade);
     }
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
   }
   renderGradeRow(data, deleteGrade) {
+      var tbody = this.tableElement.querySelector('TBODY');
       var row = document.createElement('TR');
       var stuName = document.createElement('TD');
       var stuCourse = document.createElement('TD');
@@ -42,6 +32,6 @@ class GradeTable {
 
       opsTd.appendChild(opsBtn);
       row.append(stuName, stuCourse, stuGrade, opsTd);
-      return row;
+      tbody.appendChild(row);
   }
 }
