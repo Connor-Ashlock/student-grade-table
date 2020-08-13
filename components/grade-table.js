@@ -4,11 +4,11 @@ class GradeTable {
     this.noGradesElement = noGradesElement;
   }
   updateGrades(grades) {
-    var noGradesElement = document.querySelector('.d-none');
-    if (!grades) {
-      noGradesElement.classList.remove('d-none');
+    console.log(grades)
+    if (grades.length) {
+      this.noGradesElement.classList.add('d-none');
     } else {
-      noGradesElement.classList.add('d-none');
+      this.noGradesElement.classList.remove('d-none');
     }
     var tbody = this.tableElement.querySelector('TBODY');
     tbody.innerHTML = '';
