@@ -4,6 +4,12 @@ class GradeTable {
     this.noGradesElement = noGradesElement;
   }
   updateGrades(grades) {
+    var noGradesElement = document.querySelector('.d-none');
+    if (!grades) {
+      noGradesElement.classList.remove('d-none');
+    } else {
+      noGradesElement.classList.add('d-none');
+    }
     var tbody = this.tableElement.querySelector('TBODY');
     tbody.innerHTML = '';
     for (var i = 0; i < grades.length; i++) {
