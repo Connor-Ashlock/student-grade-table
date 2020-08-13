@@ -57,4 +57,13 @@ class App {
     this.getGrades();
     console.log(data);
   }
+  deleteGrade(id) {
+    console.log(id);
+  }
+  handleDeleteGradeError(error) {
+    console.error(error);
+  }
+  handleDeleteGradeSuccess() {
+    this.getGrades();
+  }
 }
