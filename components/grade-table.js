@@ -35,7 +35,9 @@ class GradeTable {
       stuGrade.classList = 'border-right-black';
       opsBtn.classList = 'btn btn-danger';
       opsBtn.textContent = 'Delete';
-      opsBtn.addEventListener('click', data.id);
+      opsBtn.addEventListener('click', function(){
+        deleteGrade(data.id);
+      });
 
       opsTd.appendChild(opsBtn);
       row.append(stuName, stuCourse, stuGrade, opsTd);
